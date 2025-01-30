@@ -69,7 +69,7 @@ public interface PatientRepository extends JpaRepository<Patients, Long> {
     select new ma.ac.uit.fs.kinesitherapie
                                     .Patients
                                         .dto
-                                        .PatientsListDto( p.uuidPatient, concat( p.nom  ,  p.prenom)
+                                        .PatientsListDto( p.uuidPatient, concat( p.nom  ,' ',  p.prenom)
                                                          )
     from   Patients p
 """)
