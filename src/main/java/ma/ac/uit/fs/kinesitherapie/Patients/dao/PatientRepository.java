@@ -42,7 +42,7 @@ public interface PatientRepository extends JpaRepository<Patients, Long> {
     select new ma.ac.uit.fs.kinesitherapie
                                     .Patients
                                         .dto
-                                        .RendezVousPatientDto( r.numeroRendezVous,  r.date,   r.heure,
+                                        .RendezVousPatientDto( r.numeroRendezVous,  r.dateRendezVous,
                                                                 r.statut, r.uuidRendezVous
                                                               )
     from   Patients p 
