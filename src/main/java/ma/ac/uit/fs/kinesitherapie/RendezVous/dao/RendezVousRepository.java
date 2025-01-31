@@ -5,22 +5,24 @@ import ma.ac.uit.fs.kinesitherapie.RendezVous.entities.RendezVous;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
-
+@Repository
 public interface RendezVousRepository extends JpaRepository<RendezVous,Long> {
 
-    List<RendezVous> findByDate(LocalDate date);
-    List<RendezVous> findByPatient(Long idPatient);
+    List<RendezVous> findByDateRendezVous(LocalDateTime date);
+   // List<RendezVous> findByPatient(Long idPatient);
 
     @Query("""
     select new ma.ac.uit.fs.kinesitherapie
                                     .RendezVous
                                         .dto
-                                        .RendezVousDto( p.nom,r.numeroRendezVous,  r.date,   r.heure,
+                                        .RendezVousDto( p.nom,r.numeroRendezVous,  r.dateRendezVous,
                                                               r.statut,u.displayName,r.observation, r.dateCreation
                                                        )
     from   Patients p 

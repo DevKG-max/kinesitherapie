@@ -28,6 +28,6 @@ public class AuthService {
         //authRepository.deleteById(id);
     }
     public AuthUsers getUserByUuid(String uuidUser){
-        return authRepository.findByUuidUser(uuidUser).orElse(null);
+        return authRepository.findByUuidUser(uuidUser);
     }
 }

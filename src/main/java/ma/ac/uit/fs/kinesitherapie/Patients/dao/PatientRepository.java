@@ -5,10 +5,11 @@ import ma.ac.uit.fs.kinesitherapie.Patients.entities.Patients;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.UUID;
-
+@Repository
 public interface PatientRepository extends JpaRepository<Patients, Long> {
 
     @Query("""
@@ -55,7 +56,7 @@ public interface PatientRepository extends JpaRepository<Patients, Long> {
     select new ma.ac.uit.fs.kinesitherapie
                                     .Patients
                                         .dto
-                                        .RendezVousPatientsDto( p.nom,     p.prenom,  r.date,   r.heure,
+                                        .RendezVousPatientsDto( p.nom,     p.prenom,  r.dateRendezVous,
                                                                 r.statut, r.uuidRendezVous
                                                               )
     from   Patients p 

@@ -83,12 +83,12 @@ public class RendezVousServiceImpl implements RendezVousService{
     }
 
     @Override
-    public List<RendezVous> getRendezVousByDate(LocalDate date) {
+    public List<RendezVous> getRendezVousByDate(LocalDateTime date) {
         return null;
     }
 
     @Override
-    public List<RendezVous> getRendezVousByDateBetween(LocalDate dateDebut, LocalDate dateFin) {
+    public List<RendezVous> getRendezVousByDateBetween(LocalDateTime dateDebut, LocalDateTime dateFin) {
         return null;
     }
 
