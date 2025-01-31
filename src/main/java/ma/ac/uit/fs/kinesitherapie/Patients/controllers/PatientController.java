@@ -26,5 +26,10 @@ public class PatientController {
         return  ResponseEntity.ok(patientService.createPatient(objectDto));
     }
 
+    @PostMapping("/find")
+    public ResponseEntity<List<PatientsDto>> findPatient(@RequestBody String patientName){
+        return ResponseEntity.ok(patientService.patients(patientName));
+    }
+
 
 }
